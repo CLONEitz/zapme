@@ -1,0 +1,300 @@
+zapme-robo {
+
+    * {
+        font-family: "Inter", sans-serif !important;
+    }
+
+    >div {
+        height: 600px !important;
+        width: 600px !important;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 0.5rem;
+
+        >span {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+            align-items: center;
+            color: grey;
+        }
+    }
+
+
+    section {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        height: 100%;
+        gap: 10px;
+
+        .zapme-robo-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 0.3rem;
+            overflow-y: scroll;
+            max-height: 550px !important;
+            scrollbar-width: thin !important;
+            scrollbar-color: grey white;
+
+            >div {
+                /* background-color: #eeee; */
+                outline: 1px solid #eee;
+                padding: 0.5rem;
+                display: flex;
+                color: gray;
+                font-size: 12px;
+                border-radius: 0.3rem;
+                justify-content: space-between;
+                line-height: 16px !important;
+
+                span {
+                    color: grey;
+                }
+
+                b {
+                    font-weight: 500 !important;
+                    color: var(--zapme-message-black-2) !important;
+                    font-size: 12px !important;
+                }
+
+                &:hover {
+                    background-color: #eee;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        >div {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.3rem;
+            display: grid;
+            grid-template-rows: 40px 275px;
+            grid-auto-flow: row-reverse;
+            gap: 5px;
+
+            .zapme-robo-preview {
+                border-radius: 0.5rem;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                overflow-y: hidden;
+                scrollbar-width: thin;
+                scrollbar-color: white transparent;
+
+                span {
+                    width: fit-content;
+                    max-width: 80%;
+                    padding: 0.3rem;
+                    border-radius: 0.3rem;
+                    color: #eee;
+                    font-weight: 200;
+                    font-size: 12px;
+                }
+
+
+
+                header {
+                    display: flex;
+                    justify-content: start;
+                    /* background-color: var(--zapme-message-black-2); */
+                    border-radius: 0.3rem;
+                    align-items: center !important;
+                    width: 100% !important;
+                    padding-inline: 0 !important;
+
+
+                    >span {
+                        font-weight: 500;
+                        font-size: 12px;
+                        color: var(--zapme-message-black-2) !important;
+                    }
+
+                    .switch {
+                        font-size: 17px;
+                        position: relative;
+                        display: inline-block;
+                        width: 62px;
+                        height: 35px;
+                        top: 3px;
+                        left: 80px;
+                    }
+
+                    /* Hide default HTML checkbox */
+                    .switch input {
+                        opacity: 1;
+                        width: 0;
+                        height: 0;
+                    }
+
+                    /* The slider */
+                    .slider {
+                        position: absolute;
+                        cursor: pointer;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0px;
+                        background: red;
+                        transition: .4s;
+                        border-radius: 30px;
+                        border: 1px solid #ccc;
+                        height: 18px;
+                        width: 100px;
+                    }
+
+                    .slider:before {
+                        position: absolute;
+                        content: "";
+                        height: 1.9em;
+                        width: 1.9em;
+                        border-radius: 16px;
+                        left: 2.2px;
+                        top: 2.5px;
+                        bottom: 0;
+                        background-color: white;
+                        box-shadow: 0 2px 5px #999999;
+                        transition: .4s;
+                    }
+
+                    input:checked+.slider {
+                        background-color: #5fdd54;
+                        border: 1px solid transparent;
+                    }
+
+                    input:checked+.slider:before {
+                        transform: translateX(2.7em);
+                    }
+                }
+            }
+
+            .zapme-robo-configs {
+                /* background-color: #eeee; */
+                border-radius: 0.3rem;
+                display: flex !important;
+                flex-direction: column;
+                padding: 0.4rem;
+                gap: 6px;
+
+                .zapme-robo-config-save {
+                    background-color: var(--zapme-azul);
+                }
+
+                .zapme-robo-config-feedback {
+                    background-color: var(--zapme-message-black-2);
+                }
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    font-size: 12px;
+                    gap: 8px;
+
+
+                    label {
+                        color: grey !important;
+                    }
+
+                    span {
+                        font-size: 12px;
+                        width: 150px;
+                        color: grey !important;
+                    }
+
+                    &:has(span) {
+                        padding-inline: 0 !important;
+                    }
+
+                    &:has(textarea) {
+
+                        textarea {
+                            width: 100%;
+                            outline: none;
+                            border: none;
+                            font-size: 12px;
+                            border-radius: 0.2rem;
+                            resize: none !important;
+                            height: 110px;
+                            padding: 0.3rem;
+                            scrollbar-width: thin;
+                            scrollbar-color: var(--zapme-message-black-2) transparent;
+                            outline: 1px solid #eee;
+
+                            &::placeholder {
+                                color: silver;
+                            }
+                        }
+                    }
+
+
+
+                    input[type="checkbox"] {
+                        margin: 0 !important;
+                        cursor: pointer;
+                    }
+
+                    input[type="text"], select {
+                        padding: 0.4rem !important;
+                        outline: none;
+                        border: none;
+                        width: 100% !important;
+                        font-size: 12px;
+                        border-radius: 0.2rem;
+                        outline: 1px solid #eee;
+
+                        &::placeholder {
+                            font-size: 12px !important;
+                            color: #999999;
+                        }
+                    }
+
+                    select {
+                        background: white !important;
+                        color: grey !important;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .zapme-yt-videos {
+                display: flex;
+                flex-direction: column;
+                margin-top: auto;
+                padding: 0.8rem;
+                gap: 10px;
+                border-radius: 0.3rem;
+                /* outline: 1px solid silver; */
+                /* background: #eee; */
+                
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 4px;
+                    color: #3c3c3c;
+                    font-size: 13px;
+                    font-weight: 400;
+
+                    &::before {
+                        content: "";
+                        display: inline-block;
+                        width: 29.83px;
+                        height: 18px;
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 180'%3E%3Cpath fill='%23f00' d='M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134' stroke-width='4.5' stroke='%23f00'/%3E%3Cpath fill='%23fff' d='m102.421 128.06l66.328-38.418l-66.328-38.418z' stroke-width='4.5' stroke='%23fff'/%3E%3C/svg%3E");
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}

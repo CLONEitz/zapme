@@ -1,0 +1,165 @@
+zapme-watermark {
+    background: linear-gradient(45deg, #74FD57, #34ED87, #17DDA7);
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    font-weight: bold;
+    padding: 5px 10px;
+    position: absolute !important;
+    z-index: 999999;
+    left: 50%;
+    box-shadow: rgba(46, 46, 46, 0.19) 1px 1px 1px 1px;
+
+    >a {
+        font-family: monospace;
+        font-size: 15px;
+        color: #4d4d4d !important;
+        cursor: not-allowed;
+
+
+        &:hover {
+            text-decoration: none !important;
+
+            &::after {
+                padding: 5px;
+                font-size: 12px;
+                width: max-content;
+                content: "Para esconder o texto, tenha um Plano PRO!";
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            right: -5px;
+            bottom: -5px;
+            content: "X";
+            font-weight: bold;
+            height: 10px;
+            background: red;
+            color: white;
+            width: 10px;
+            font-size: 10px;
+            padding: 2px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    }
+}
+
+#zapme-no-ad {
+    margin-top: 3px;
+    margin-right: 5px;
+    transform: translate(-5px, -5px);
+
+    &:hover {
+        cursor: pointer;
+        border-radius: 3px;
+        text-decoration: none !important;
+    }
+}
+
+.zapme-ad {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1000;
+    box-sizing: border-box;
+    margin: 0;
+    height: 185px;
+}
+
+.zapme-ad img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#zapme-no-ad {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+    cursor: pointer;
+    /* background: rgba(0, 0, 0, 0.4); */
+    border-radius: 50%;
+    padding: 2px;
+}
+
+
+zapme-modal-ad {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+
+    >* {
+        font-family: "Inter", sans-serif !important;
+    }
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: 500px;
+        border-radius: 6px;
+        padding: 0.5rem;
+        box-shadow: rgba(181, 175, 175, 0.121) 1px 1px 10px 4px;
+        overflow: hidden;
+        background-color: white;
+
+        a {
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: 6px;
+            }
+        }
+
+        >div {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 4px;
+
+            button {
+                display: flex;
+                height: 40px;
+                justify-content: center;
+                font-size: 14px !important;
+                width: 100%;
+                color: white !important;
+                font-weight: 400;
+
+                &:hover {
+                    filter: contrast(120%) !important;
+                }
+
+                &:first-child {
+                    background-color: #2563eb;
+                }
+
+                &:last-child {
+                    background-color: #3c3c3c;
+                }
+            }
+        }
+    }
+}

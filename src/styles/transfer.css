@@ -1,0 +1,119 @@
+zapme-transfer {
+    * {
+        font-family: "Inter", sans-serif !important;
+    }
+
+    >div {
+        width: 300px !important;
+
+        textarea {
+            border-radius: 5px;
+            font-family: "Inter", sans-serif !important;
+            border: none !important;
+            outline: 1px solid #eeee;
+            padding: 6px;
+            color: gray;
+            width: 288px !important;
+            height: 60px !important;
+
+            &::placeholder {
+                color: silver;
+            }
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            overflow-y: auto !important;
+            width: 100%;
+            max-height: 250px !important;
+            height: 250px;
+            scrollbar-width: thin;
+            scrollbar-color: #3c3c3c transparent;
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: grey;
+                padding: 8px;
+                border-radius: 6px;
+
+
+                >span {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    align-items: center;
+                    font-size: 14px;
+                    color: black;
+                }
+
+                >button {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    outline: 1px solid silver;
+                    border-radius: 6px;
+                    border: none;
+                    padding: 4px 6px;
+                    color: black;
+
+                    &:hover {
+                        background-color: #eeee;
+                        cursor: pointer;
+                    }
+
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' fill-rule='evenodd' d='M9.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L12.586 12L9.293 8.707a1 1 0 0 1 0-1.414' clip-rule='evenodd'/%3E%3C/svg%3E");
+                    }
+                }
+            }
+        }
+
+        >div {
+            width: 288px !important;
+            font-size: 14px;
+            padding: 4px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            >span {
+                background-color: #eeee;
+                color: grey;
+                padding: 6px;
+                border-radius: 6px;
+
+                strong {
+                    color: black;
+                    font-weight: 600;
+                }
+
+
+            }
+
+        }
+
+    }
+
+    .alert-cli {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        gap: 6px;
+
+        * {
+            cursor: not-allowed;
+        }
+    }
+
+}
